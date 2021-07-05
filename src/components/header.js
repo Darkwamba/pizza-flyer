@@ -2,7 +2,12 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+//TODO parametrizzare n telefono
+
+const Header = ({ siteTitle }) => {
+
+  const phone=`051-00000000`
+  return (
   <header
     style={{
       background: `rebeccapurple`,
@@ -27,9 +32,13 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <h1 style={{ margin: 0 }}>
+        {phone}
+      </h1>
     </div>
   </header>
-)
+  )
+ }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
