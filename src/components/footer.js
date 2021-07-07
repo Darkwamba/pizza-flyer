@@ -12,8 +12,9 @@ return (
     </div>
     <div className="hours">
       <h3>Orari</h3>
-      <span>Chiuso il lunedi</span>
-      <span>Tutti i giorni dalle 12.00-14.00 e dalle 18.00-22.00</span>
+      <span>Mar-sab 12-14 18-22:30</span>
+      <span>Dom 18-22:30</span>
+      <span>Chiusi lunedì e festivi a pranzo</span>
     </div>
     <div className="contact">
       <h3>CONTATTI</h3>
