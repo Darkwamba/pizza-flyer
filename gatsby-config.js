@@ -47,13 +47,13 @@ module.exports = {
         disableLiveReload: false,
       },
     },
-    /*
+   
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `darkwamba`, // Your Instagram
+        username: process.env.INSTA_ACCOUNT,
       },
-    },*/
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
