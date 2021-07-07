@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Pizzart Smart Flyer`,
@@ -30,6 +33,27 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        // You can find your read-only API token under the Settings > API tokens
+        // section of your administrative area. Make sure to grant both CDA and CMA permissions.
+        apiToken: process.env.DATOCMS_API,
+        // If you are working on development/staging environment, you might want to
+        // preview the latest version of records instead of the published one:
+        previewMode: false,
+        // Disable automatic reloading of content when some change occurs on DatoCMS:
+        disableLiveReload: false,
+      },
+    },
+    /*
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `darkwamba`, // Your Instagram
+      },
+    },*/
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
