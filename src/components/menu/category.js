@@ -13,11 +13,11 @@ const Category = ({data,type}) => {
         {
           items.map(({ node }) => {
           if(type==="Pizza")
-              return <ItemPizza item={node}/>
+              return <ItemPizza key={node.idprodotto} item={node}/>
             else if(type==="Drink")
-              return <ItemDrink item={node}/>
+              return <ItemDrink key={node.idprodotto} item={node}/>
             else
-              return <ItemFood item={node}/>
+              return <ItemFood key={node.idprodotto}  item={node}/>
           })
         }
       </article>

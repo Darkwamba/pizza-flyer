@@ -13,6 +13,7 @@ import Header from "./header"
 import Footer from "./footer"
 import '../styles/styles.scss'
 //import "./layout.css"
+import { Container } from "@material-ui/core"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,13 +27,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    
+  <Container maxWidth="md" >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
       <main>{children}</main>
       <Footer/>
       </div>
-    </>
+    </Container>
   )
 }
 

@@ -1,12 +1,19 @@
 import React from 'react'
+import { Card,CardContent,Typography } from "@material-ui/core"
 
 const ItemFood = ({item}) => {
 
     return (
-                <div key={item.idprodotto} className="menu-item">
-                  <div>{item.nome}</div>
-                  <div>€{item.prezzoNormale}</div>
-                  <div>Ingredienti: {item.ingredienti.reduce((htmlDesc,ingrediente,indice) => {
+      <Card key={item.idprodotto} >
+        <CardContent>
+        <Typography variant="h6" component="span">
+        {item.nome}
+        </Typography>  
+        <Typography variant="body" color="textSecondary" component="p">
+        €{item.prezzoNormale}
+        </Typography>
+        <Typography variant="body" color="textSecondary" component="p">
+        Ingredienti: {item.ingredienti.reduce((htmlDesc,ingrediente,indice) => {
                                       if (indice===0)
                                           return ingrediente.nome;
                                       else
@@ -14,8 +21,11 @@ const ItemFood = ({item}) => {
   
                                     },""
   
-                  )}</div>
-                </div>       
+                  )}
+        </Typography>        
+
+        </CardContent>
+      </Card>     
     )
   }
   
