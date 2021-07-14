@@ -13,6 +13,7 @@
     display: grid;
     justify-content: center;
     gap: 20px;
+    padding-inline-start: 0px;
     @media screen and (min-width: 630px) {
       grid-template-columns: repeat(2, 280px);
       grid-template-rows: auto;

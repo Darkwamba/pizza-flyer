@@ -1,41 +1,50 @@
-const dotenv = require('dotenv')
-
 require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
-    title: `Pizzart Smart Flyer`,
-    description: `A flyer with enhanched functions!`,
-    author: `@Darkwamba`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: 'Pizzart Smart Flyer',
+    description: 'A flyer with enhanched functions!',
+    author: '@Darkwamba',
+    siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-theme-material-ui',
+    'gatsby-plugin-image',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        name: `images`,
+        fonts: [
+          'material icons',
+          'roboto:300,400,500,700',
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-sass',
     {
-      resolve: `gatsby-source-datocms`,
+      resolve: 'gatsby-source-datocms',
       options: {
         // You can find your read-only API token under the Settings > API tokens
         // section of your administrative area. Make sure to grant both CDA and CMA permissions.
@@ -47,15 +56,15 @@ module.exports = {
         disableLiveReload: false,
       },
     },
-    /*
+   
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: 'gatsby-source-instagram',
       options: {
-        username: `darkwamba`, // Your Instagram
+        username: process.env.INSTA_ACCOUNT,
       },
-    },*/
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

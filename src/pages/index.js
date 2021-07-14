@@ -1,7 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -11,6 +9,7 @@ import Offers from "../components/offers"
 import Instagram from "../components/instagram"
 
 import '../styles/styles.scss'
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -19,7 +18,7 @@ const IndexPage = () => (
     <section className="hero">
     <StaticImage
       src="../images/pizza-home.jpg"
-      width={800}
+      maxwidth={1200}
       quality={95}
       formats={["AUTO", "WEBP", "AVIF"]}
       alt="A tasty pizza"
@@ -32,7 +31,6 @@ const IndexPage = () => (
       <Offers/>
       <Instagram/>
     </section>
-    
   </Layout>
 )
 
