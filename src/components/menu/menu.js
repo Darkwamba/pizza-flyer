@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Category from './category'
 import ToggleButton  from './togglebutton'
+import {Typography} from "@material-ui/core"
 
 const Menu = () => {
   const localmenu = useStaticQuery(graphql`
@@ -91,7 +92,7 @@ const Menu = () => {
   */
   return (
     <section className="menu">
-      <h2>IL MENU</h2>
+      <Typography variant="h3" component="p">Menu</Typography>
       <ToggleButton name="Pizze classiche">
           <Category data={localmenu.pizzeclassiche} type={"Pizza"} />
       </ToggleButton>

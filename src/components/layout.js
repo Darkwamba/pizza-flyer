@@ -11,9 +11,42 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import '../styles/styles.scss'
-//import "./layout.css"
+import "../styles/styles.scss"
 import { Container } from "@material-ui/core"
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+
+//https://in-your-saas.github.io/material-ui-theme-editor/
+const mainTheme = createTheme({
+  palette: {
+    common: { black: "rgba(126, 211, 33, 1)", white: "#fff" },
+    background: { paper: "rgba(248, 231, 28, 0.16)", default: "#fafafa" },
+    primary: {
+      light: "rgba(126, 211, 33, 0.77)",
+      main: "rgba(85, 157, 8, 1)",
+      dark: "rgba(65, 117, 5, 1)",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "rgba(211, 140, 78, 1)",
+      main: "rgba(219, 125, 43, 1)",
+      dark: "rgba(206, 105, 16, 1)",
+      contrastText: "#fff",
+    },
+    error: {
+      light: "#e57373",
+      main: "#f44336",
+      dark: "#d32f2f",
+      contrastText: "#fff",
+    },
+    text: {
+      primary: "rgba(0, 0, 0, 0.87)",
+      secondary: "rgba(0, 0, 0, 0.54)",
+      disabled: "rgba(0, 0, 0, 0.38)",
+      hint: "rgba(0, 0, 0, 0.38)",
+    },
+  },
+})
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,14 +60,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    
-  <Container maxWidth="md" >
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-      <main>{children}</main>
-      <Footer/>
-      </div>
-    </Container>
+    <ThemeProvider theme={mainTheme}>
+      <Container maxWidth="md">
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <div>
+          <main>{children}</main>
+          <Footer />
+        </div>
+      </Container>
+    </ThemeProvider>
   )
 }
 

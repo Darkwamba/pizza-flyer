@@ -1,14 +1,10 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
 import Menu from "../components/menu/menu"
 import Offers from "../components/offers"
 import Instagram from "../components/instagram"
-
-import '../styles/styles.scss'
 
 const IndexPage = () => (
   <Layout>

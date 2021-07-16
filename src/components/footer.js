@@ -1,49 +1,51 @@
 import * as React from "react"
-import { Grid, Card } from "@material-ui/core"
+import { Grid, Card,Typography, Link } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles(theme => ({
+  card:{
+    minHeight:'100px',
+  }
+}))
 
 const Footer = () => {
+  const classes = useStyles();
   return (
     <footer>
       <Grid container spacing={2} direction="row">
       <Grid item xs={12} sm={4}>
-          <Card>
-            <div className="address">
-              <h3>Dove siamo?</h3>
-              <span>via Roma 3</span>
-              <span>Casalecchio</span>
-            </div>
+          <Card className={classes.card} > 
+              <Typography variant="h6" component="p">Dove siamo?</Typography>
+              <Typography variant="body1" component="p">via Roma 3</Typography>
+              <Typography variant="body1" component="p"> Casalecchio</Typography>
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card>
-            <div className="hours">
-              <h3>Orari</h3>
-              <span>Mar-sab 12-14 18-22:30</span>
-              <span>Dom 18-22:30</span>
-              <span>Chiusi lunedì e festivi a pranzo</span>
-            </div>
+          <Card className={classes.card} >
+            <Typography variant="h6" component="p">Orari</Typography>
+            <Typography variant="body1" component="p">Mar-sab 12-14 18-22:30</Typography>
+            <Typography variant="body1" component="p">Dom 18-22:30</Typography>
+            <Typography variant="body2" component="p">Chiusi lunedì e festivi a pranzo</Typography>
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card>
-            <div className="contact">
-              <h3>CONTATTI</h3>
-              <span>051 44444444</span>
-              <span>@yourSocialName</span>
-            </div>
+          <Card className={classes.card} > 
+            <Typography variant="h6" component="p">Contatti</Typography>
+            <Typography variant="body1" component="p">051 44444444</Typography>
+            <Typography variant="body1" component="p">@yourSocialName</Typography>
           </Card>
         </Grid>
         <Grid item xs={12}>
-          <p>
-            Creato da
-            <a
+        <Typography variant="subtitle1" component="p">
+            Created by:
+            <Link
               href="https://github.com/Darkwamba"
               target="_blank"
               rel="noopener noreferrer"
             >
-              S.Martello
-            </a>
-          </p>
+            S.Martello
+            </Link>
+            </Typography>
         </Grid>
       </Grid>
     </footer>

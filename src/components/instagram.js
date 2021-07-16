@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { Typography, Link } from "@material-ui/core"
 
 const Instagram = () => {
   /*return (
@@ -37,13 +38,16 @@ const Instagram = () => {
 
   return (
     <div className="insta">
-      <h2>INSTAGRAM</h2>
-
-      <span>
-        <a href={"https://www.instagram.com/".concat(account_name).concat("/")}>
+      <Typography variant="h5" component="p">Seguici su Instagram</Typography>
+      <Typography variant="h5" component="p">
+        <Link 
+            href={"https://www.instagram.com/".concat(account_name).concat("/")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           {"@".concat(account_name)}
-        </a>
-      </span>
+        </Link>
+        </Typography>
       <ul className="insta-posts">
         {instaPosts.map(({ node }) => {
           const image = getImage(node.localFile)
