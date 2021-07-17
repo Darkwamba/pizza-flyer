@@ -3,12 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import { Typography, Link } from "@material-ui/core"
 
-const Instagram = () => {
-  /*return (
-    <div>
-    {`Qua ci va instagram`}
-  </div>
-)*/
+const Instagram = ({account_name}) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -33,8 +28,6 @@ const Instagram = () => {
     }
   `)
   const instaPosts = data.allInstaNode.edges
-  //const account_name=process.env.INSTA_ACCOUNT_NAME
-  const account_name = "piz.zart"
 
   return (
     <div className="insta">

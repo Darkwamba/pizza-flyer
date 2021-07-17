@@ -12,9 +12,9 @@ const Category = ({data,type}) => {
       <article className="table-items-grid">
         {
           items.map(({ node }) => {
-          if(type==="Pizza")
+          if(type==="pizza")
               return <ItemPizza key={node.idprodotto} item={node}/>
-            else if(type==="Drink")
+            else if(type==="drink")
               return <ItemDrink key={node.idprodotto} item={node}/>
             else
               return <ItemFood key={node.idprodotto}  item={node}/>

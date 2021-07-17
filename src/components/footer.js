@@ -8,31 +8,31 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Footer = () => {
+const Footer = ({address,phone,social_instagram,aperture}) => {
   const classes = useStyles();
   return (
     <footer>
       <Grid container spacing={2} direction="row">
       <Grid item xs={12} sm={4}>
           <Card className={classes.card} > 
-              <Typography variant="h6" component="p">Dove siamo?</Typography>
-              <Typography variant="body1" component="p">via Roma 3</Typography>
-              <Typography variant="body1" component="p"> Casalecchio</Typography>
+              <Typography variant="h6" component="p">Indirizzo</Typography>
+              <Typography variant="body1" component="p">{address.street}</Typography>
+              <Typography variant="body1" component="p">{address.city}</Typography>
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Card className={classes.card} >
             <Typography variant="h6" component="p">Orari</Typography>
-            <Typography variant="body1" component="p">Mar-sab 12-14 18-22:30</Typography>
-            <Typography variant="body1" component="p">Dom 18-22:30</Typography>
-            <Typography variant="body2" component="p">Chiusi lunedì e festivi a pranzo</Typography>
+            {aperture.map(( node ,index) => {
+              return <Typography key={index} variant="body1" component="p">{node}</Typography>
+            })}
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Card className={classes.card} > 
             <Typography variant="h6" component="p">Contatti</Typography>
-            <Typography variant="body1" component="p">051 44444444</Typography>
-            <Typography variant="body1" component="p">@yourSocialName</Typography>
+            <Typography variant="body1" component="p">{phone}</Typography>
+            <Typography variant="body1" component="p">@{social_instagram}</Typography>
           </Card>
         </Grid>
         <Grid item xs={12}>
@@ -43,7 +43,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-            S.Martello
+            Salvatore Martello
             </Link>
             </Typography>
         </Grid>
@@ -51,5 +51,10 @@ const Footer = () => {
     </footer>
   )
 }
-
+Footer.defaultProps = {
+  address: {street:'',city:''},
+  phone: `none`,
+  social_instagram: '',
+  aperture:[''],
+}
 export default Footer

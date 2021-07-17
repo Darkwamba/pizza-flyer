@@ -50,10 +50,17 @@ const mainTheme = createTheme({
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
+          phone
+          aperture
+          social_instagram
+          address {
+            city
+            street
+          }
         }
       }
     }
@@ -62,10 +69,18 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={mainTheme}>
       <Container maxWidth="md">
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          phone={data.site.siteMetadata?.phone}
+        />
         <div>
           <main>{children}</main>
-          <Footer />
+          <Footer
+            phone={data.site.siteMetadata?.phone}
+            address={data.site.siteMetadata?.address}
+            social_instagram={data.site.siteMetadata?.social_instagram}
+            aperture={data.site.siteMetadata.aperture}
+          />
         </div>
       </Container>
     </ThemeProvider>

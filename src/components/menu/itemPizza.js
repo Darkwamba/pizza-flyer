@@ -44,23 +44,23 @@ const ItemPizza = ({ item }) => {
           </Typography>
           <div className={classes.prices}>
             <Paper className={classes.price}>
-              <Typography variant="body" color="textSecondary" component="p">
+              <Typography variant="body1" color="textSecondary" component="p">
                 €{item.prezzoNormale}
               </Typography>
             </Paper>
             <Paper className={classes.price}>
-              <Typography variant="body" color="textSecondary" component="p">
+              <Typography variant="body1" color="textSecondary" component="p">
                 €{item.prezzoTirata}
               </Typography>
             </Paper>
             <Paper className={classes.price}>
-              <Typography variant="body" color="textSecondary" component="p">
+              <Typography variant="body1" color="textSecondary" component="p">
                 €{item.prezzoGigante}
               </Typography>
             </Paper>
           </div>
         </div>
-        <Typography variant="body" color="textSecondary" component="p">
+        <Typography variant="body1" color="textSecondary" component="p">
           Ingredienti:{" "}
           {item.ingredienti.reduce((htmlDesc, ingrediente, indice) => {
             if (indice === 0) return ingrediente.nome
