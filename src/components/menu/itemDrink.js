@@ -46,7 +46,7 @@ const ItemDrink = ({ item }) => {
         </Typography>
         <div className={classes.prices}>
           <Paper className={classes.price}>
-            <Typography variant="body" color="textSecondary" component="p">
+            <Typography variant="body1" color="textSecondary" component="p">
               €{item.prezzoNormale}
             </Typography>
           </Paper>

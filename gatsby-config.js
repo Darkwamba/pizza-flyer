@@ -4,13 +4,24 @@ module.exports = {
   siteMetadata: {
     title: 'Pizzart Smart Flyer',
     description: 'A flyer with enhanched functions!',
+    address:{street:'via Pincopallo 10',city:'Castello D\'argile'},
+    coordinates:[44.6803392, 11.2927718],
+    aperture:['Mar-sab 12-14 18-22:30','Dom 18-22:30','Chiusi lunedì e festivi a pranzo'],
+    phone:'051-00001111',
     author: '@Darkwamba',
+    social_instagram: 'pizz.art',
     siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-theme-material-ui',
     'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+      }
+    },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
